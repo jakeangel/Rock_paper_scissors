@@ -17,16 +17,10 @@ function getHumanChoice(){
     }
 
 
-   
-
-
-const computerChoice = getComputerChoice();
-const humanChoice = getHumanChoice();
-
-
+    
+function playGame(){
 
 let humanScore = 0;
-
 let computerScore = 0;
 
 function playRound(humanSelection, computerSelection){
@@ -52,9 +46,48 @@ function playRound(humanSelection, computerSelection){
         humanScore++;
     }
 
+    
+
+
+}
+
+const computerChoice = getComputerChoice();
+const humanChoice = getHumanChoice();
+playRound(humanChoice, computerChoice);
+
+console.log("Computer Score" + computerScore + " ,Human Score" + humanScore);
+
+const computerChoice2 = getComputerChoice();
+const humanChoice2 = getHumanChoice();
+playRound(humanChoice2, computerChoice2);
+
+console.log("Computer Score" + computerScore + " ,Human Score" + humanScore);
+
+const computerChoice3 = getComputerChoice();
+const humanChoice3 = getHumanChoice();
+playRound(humanChoice3, computerChoice3);
+
+console.log("Computer Score" + computerScore + " ,Human Score" + humanScore);
+
+const computerChoice4 = getComputerChoice();
+const humanChoice4 = getHumanChoice();
+playRound(humanChoice4, computerChoice4);
+
+console.log("Computer Score" + computerScore + " ,Human Score" + humanScore);
+
+const computerChoice5 = getComputerChoice();
+const humanChoice5 = getHumanChoice();
+playRound(humanChoice5, computerChoice5);
+
+console.log("Computer Score" + computerScore + " ,Human Score" + humanScore);
+
+if (computerScore > humanScore){
+    console.log("Computer wins the match!");
+} else{
+    console.log("Human wins this match!");
+}
+
 }
 
 
-playRound(humanChoice, computerChoice);
-
- 
+playGame();
