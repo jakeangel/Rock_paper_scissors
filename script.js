@@ -51,12 +51,23 @@ function playRound(humanSelection, computerSelection){
         humanScore++;
     }
 
+    function resetGame(){
+    humanScore = 0;
+    computerScore = 0;
+    result.textContent = "";
+    score.textContent = "";
+    }
     
     if ( humanScore === 5){
-    announceWinner.textContent = "Human is the winner!";
-    } else if( computerScore === 5) {
-        announceWinner.textContent = "Computer is the winner!";
-       
+        announceWinner.textContent = "Human is the winner!";
+        resetGame();
+    
+    } else if( computerScore === 5 ) {
+        announceWinner.textContent = "Computer is the winner!"; 
+        resetGame();
+        
+    } else if ( computerScore > 0 || humanScore > 0){
+        announceWinner.textContent = "";
     }
 
    
@@ -72,7 +83,7 @@ const scissor = document.getElementById("scissors");
     rock.addEventListener('click', function (event){
     let computerChoice = getComputerChoice();
     playRound(event.currentTarget.id, computerChoice);
-    score.textContent = "Computer Score" + computerScore + " ,Human Score" + humanScore;
+    score.textContent = `Computer Score:  ${computerScore} Human Score: ${humanScore}`;
    
 
    
@@ -81,14 +92,14 @@ const scissor = document.getElementById("scissors");
     paper.addEventListener('click', function (event){
     let computerChoice2 = getComputerChoice();
     playRound(event.currentTarget.id, computerChoice2);
-    score.textContent = "Computer Score" + computerScore + " ,Human Score" + humanScore;
+    score.textContent = `Computer Score:  ${computerScore} Human Score: ${humanScore}`;
     
 })
 
     scissor.addEventListener('click', function (event){
     let computerChoice3 = getComputerChoice();
     playRound(event.currentTarget.id, computerChoice3);
-    score.textContent = "Computer Score" + computerScore + " ,Human Score" + humanScore;
+    score.textContent = `Computer Score:  ${computerScore} Human Score: ${humanScore}`;
     
 
 })
