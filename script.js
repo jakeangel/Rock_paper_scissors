@@ -54,7 +54,6 @@ function playRound(humanSelection, computerSelection){
     function resetGame(){
     humanScore = 0;
     computerScore = 0;
-    result.textContent = "";
     score.textContent = "";
     }
     
@@ -66,7 +65,7 @@ function playRound(humanSelection, computerSelection){
         announceWinner.textContent = "Computer is the winner!"; 
         resetGame();
         
-    } else if ( computerScore > 0 || humanScore > 0){
+    } else if ( computerScore > 0 || humanScore > 0 || result.textContent == "Draw!"){
         announceWinner.textContent = "";
     }
 
